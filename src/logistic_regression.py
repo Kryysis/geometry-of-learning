@@ -1,4 +1,3 @@
-
 import numpy as np
 
 
@@ -42,8 +41,8 @@ def binary_cross_entropy(X, y, theta, l2=0.0):
     data_loss = np.mean(np.logaddexp(0.0, z) - y * z)
 
     # Exclude bias (theta[0]) from regularization
-    regularization = (l2 / (2 * m)) * np.sum(theta[1:] ** 2)
-
+    regularization = (l2 / 2) * np.sum(theta[1:] ** 2)
+    
     return data_loss + regularization
 
 
@@ -62,7 +61,7 @@ def compute_gradient(X, y, theta, l2=0.0):
     gradient = (X.T @ (probabilities - y)) / m
 
     # L2 regularization gradient (excluding bias)
-    gradient[1:] += (l2 / m) * theta[1:]
+    gradient[1:] += l2 * theta[1:]
 
     return gradient
 
@@ -92,26 +91,30 @@ def compute_hessian(X, theta, l2=0.0):
     regularization_matrix = np.eye(X.shape[1])
     regularization_matrix[0, 0] = 0.0
 
-    hessian += (l2 / m) * regularization_matrix
+    hessian += l2 * regularization_matrix
 
     return hessian
 
 
 class LogisticRegression:
     """
-    Logistic regression with a manually implemented
-    gradient descent optimizer.
+    Logistic regression with pluggable optimization algorithms.
     """
 
-    def __init__(self, learning_rate=0.01, epochs=1000, l2=0.0):
-        self.learning_rate = learning_rate
-        self.epochs = epochs
+    def __init__(self, l2=0.0):
         self.l2 = l2
-
         self.theta = None
         self.loss_history = []
 
-    def fit(self, X, y):
+    def fit(
+        self,
+        X,
+        y,
+        optimizer,
+        epochs=100,
+        batch_size=None,
+        shuffle=True
+    ):
         X = np.asarray(X, dtype=float)
         y = np.asarray(y, dtype=float).reshape(-1)
 
@@ -123,21 +126,60 @@ class LogisticRegression:
 
         X_bias = add_intercept(X)
 
-        self.theta = np.zeros(X_bias.shape[1])
+        m = X_bias.shape[0]
+        n_parameters = X_bias.shape[1]
+
+        if batch_size is None:
+            batch_size = m
+
+        if not isinstance(batch_size, int) or not 1 <= batch_size <= m:
+            raise ValueError("Invalid batch_size.")
+
+        self.theta = np.zeros(n_parameters)
         self.loss_history = []
 
-        for _ in range(self.epochs):
-            gradient = compute_gradient(
-                X_bias, y, self.theta, self.l2
+        optimizer.reset(n_parameters)
+
+        for epoch in range(epochs):
+
+            # Shuffle training observations
+            if shuffle:
+                indices = np.random.permutation(m)
+            else:
+                indices = np.arange(m)
+
+            X_epoch = X_bias[indices]
+            y_epoch = y[indices]
+
+            # Process mini-batches
+            for start in range(0, m, batch_size):
+
+                end = min(start + batch_size, m)
+
+                X_batch = X_epoch[start:end]
+                y_batch = y_epoch[start:end]
+
+                gradient = compute_gradient(
+                    X_batch,
+                    y_batch,
+                    self.theta,
+                    self.l2
+                )
+
+                self.theta = optimizer.step(
+                    self.theta,
+                    gradient
+                )
+
+            # Record full-dataset loss after each epoch
+            epoch_loss = binary_cross_entropy(
+                X_bias,
+                y,
+                self.theta,
+                self.l2
             )
 
-            self.theta -= self.learning_rate * gradient
-
-            loss = binary_cross_entropy(
-                X_bias, y, self.theta, self.l2
-            )
-
-            self.loss_history.append(loss)
+            self.loss_history.append(epoch_loss)
 
         return self
 
