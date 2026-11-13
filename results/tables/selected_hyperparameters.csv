@@ -1,0 +1,25 @@
+Dataset,Condition,Optimizer,Selected Learning Rate,At Search Boundary,Boundary
+Breast Cancer,original,Adam,0.01,False,Interior
+Breast Cancer,original,Batch GD,1e-05,True,Minimum
+Breast Cancer,original,Momentum,0.0001,False,Interior
+Breast Cancer,original,SGD,0.0001,True,Minimum
+Breast Cancer,standardized,Adam,0.05,False,Interior
+Breast Cancer,standardized,Batch GD,2.0,True,Maximum
+Breast Cancer,standardized,Momentum,1.0,False,Interior
+Breast Cancer,standardized,SGD,0.01,False,Interior
+Banknote,original,Adam,0.2,True,Maximum
+Banknote,original,Batch GD,2.0,True,Maximum
+Banknote,original,Momentum,2.0,True,Maximum
+Banknote,original,SGD,0.02,False,Interior
+Banknote,standardized,Adam,0.2,True,Maximum
+Banknote,standardized,Batch GD,2.0,True,Maximum
+Banknote,standardized,Momentum,2.0,True,Maximum
+Banknote,standardized,SGD,0.2,True,Maximum
+Ionosphere,original,Adam,0.05,False,Interior
+Ionosphere,original,Batch GD,2.0,True,Maximum
+Ionosphere,original,Momentum,2.0,True,Maximum
+Ionosphere,original,SGD,0.01,False,Interior
+Ionosphere,standardized,Adam,0.02,False,Interior
+Ionosphere,standardized,Batch GD,0.2,False,Interior
+Ionosphere,standardized,Momentum,0.2,False,Interior
+Ionosphere,standardized,SGD,0.001,False,Interior

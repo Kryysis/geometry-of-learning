@@ -1,0 +1,21 @@
+Condition Number,Optimizer,Selected Learning Rate,Tuning Converged,Tuning Final Loss,At Search Boundary,Boundary
+1,Adam,0.03,True,9.704602792378094e-09,False,Interior
+1,Batch GD,0.9,True,8.249674782395058e-27,False,Interior
+1,Momentum,0.684,True,5.307306937120221e-09,True,Minimum
+1,SGD,0.45,True,4.885542542898906e-15,False,Interior
+10,Adam,0.1,True,9.593843861257553e-09,False,Interior
+10,Batch GD,0.153,True,4.1829917165029534e-10,False,Interior
+10,Momentum,0.342,True,5.21647059968913e-09,False,Interior
+10,SGD,0.09,True,7.22925340261839e-10,True,Maximum
+100,Adam,0.2,True,2.270693690549423e-09,False,Interior
+100,Batch GD,0.018,True,7.102541083199619e-09,True,Maximum
+100,Momentum,0.0684,True,3.1379577412048424e-09,False,Interior
+100,SGD,0.009,True,9.159102631066532e-09,True,Maximum
+1000,Adam,0.75,True,2.6059915595917074e-10,False,Interior
+1000,Batch GD,0.0018,True,9.659741544280987e-09,True,Maximum
+1000,Momentum,0.02394,True,2.1654913254279338e-09,False,Interior
+1000,SGD,0.0009,False,5.367775879617806e-07,True,Maximum
+10000,Adam,0.2,True,1.6926645326809589e-09,False,Interior
+10000,Batch GD,0.00018,False,0.0008074439049347733,True,Maximum
+10000,Momentum,0.00342,True,9.330591700591302e-09,True,Maximum
+10000,SGD,9e-05,False,0.0019648154920426774,True,Maximum

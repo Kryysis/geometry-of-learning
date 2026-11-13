@@ -1,0 +1,217 @@
+Optimizer,Learning Rate,Validation Log Loss,Status,Dataset,Condition
+Adam,0.0001,0.42770837428768516,Valid,Breast Cancer,original
+Adam,0.001,0.24120118545529526,Valid,Breast Cancer,original
+Adam,0.005,0.20526757837421644,Valid,Breast Cancer,original
+Adam,0.01,0.18683747765888412,Valid,Breast Cancer,original
+Adam,0.02,0.2078511568321767,Valid,Breast Cancer,original
+Adam,0.05,0.36378839740874314,Valid,Breast Cancer,original
+Adam,0.1,0.6666814352447625,Valid,Breast Cancer,original
+Adam,0.2,1.0872214486100948,Valid,Breast Cancer,original
+Batch GD,1e-05,0.5122927607918887,Valid,Breast Cancer,original
+Batch GD,0.0001,6.305866863735119,Valid,Breast Cancer,original
+Batch GD,0.001,11.99088842795183,Valid,Breast Cancer,original
+Batch GD,0.01,12.330723527855868,Valid,Breast Cancer,original
+Batch GD,0.05,22.448240268660676,Valid,Breast Cancer,original
+Batch GD,0.1,22.448240268660676,Valid,Breast Cancer,original
+Batch GD,0.2,12.330723527855868,Valid,Breast Cancer,original
+Batch GD,0.5,22.448240268660676,Valid,Breast Cancer,original
+Batch GD,1.0,22.448240268660676,Valid,Breast Cancer,original
+Batch GD,2.0,22.448240268660676,Valid,Breast Cancer,original
+Momentum,1e-05,0.4821901225467165,Valid,Breast Cancer,original
+Momentum,0.0001,0.27877590213928477,Valid,Breast Cancer,original
+Momentum,0.001,0.3263196531538435,Valid,Breast Cancer,original
+Momentum,0.01,2.7877995347781384,Valid,Breast Cancer,original
+Momentum,0.05,2.5965973360092462,Valid,Breast Cancer,original
+Momentum,0.1,2.845551583457151,Valid,Breast Cancer,original
+Momentum,0.2,5.978088138883794,Valid,Breast Cancer,original
+Momentum,0.5,2.8455515833513543,Valid,Breast Cancer,original
+Momentum,1.0,3.1617239815015044,Valid,Breast Cancer,original
+Momentum,2.0,3.1617239815015044,Valid,Breast Cancer,original
+SGD,0.0001,2.886490113280047,Valid,Breast Cancer,original
+SGD,0.001,6.01918383268529,Valid,Breast Cancer,original
+SGD,0.005,3.477896379651655,Valid,Breast Cancer,original
+SGD,0.01,6.0072755648528595,Valid,Breast Cancer,original
+SGD,0.02,6.323447963003009,Valid,Breast Cancer,original
+SGD,0.05,3.477896379651655,Valid,Breast Cancer,original
+SGD,0.1,4.742585972252257,Valid,Breast Cancer,original
+SGD,0.2,4.742585972252257,Valid,Breast Cancer,original
+Adam,0.0001,0.6333178511662437,Valid,Breast Cancer,standardized
+Adam,0.001,0.34934547933539395,Valid,Breast Cancer,standardized
+Adam,0.005,0.14305371024026267,Valid,Breast Cancer,standardized
+Adam,0.01,0.1001113257640112,Valid,Breast Cancer,standardized
+Adam,0.02,0.07472243911889892,Valid,Breast Cancer,standardized
+Adam,0.05,0.06087890198695379,Valid,Breast Cancer,standardized
+Adam,0.1,0.062058986878241906,Valid,Breast Cancer,standardized
+Adam,0.2,0.0707423715942849,Valid,Breast Cancer,standardized
+Batch GD,1e-05,0.6912733777381602,Valid,Breast Cancer,standardized
+Batch GD,0.0001,0.674908106685177,Valid,Breast Cancer,standardized
+Batch GD,0.001,0.5508456648537592,Valid,Breast Cancer,standardized
+Batch GD,0.01,0.259074710012253,Valid,Breast Cancer,standardized
+Batch GD,0.05,0.13962732076846854,Valid,Breast Cancer,standardized
+Batch GD,0.1,0.11176470085970802,Valid,Breast Cancer,standardized
+Batch GD,0.2,0.09163043855751174,Valid,Breast Cancer,standardized
+Batch GD,0.5,0.07257787520619868,Valid,Breast Cancer,standardized
+Batch GD,1.0,0.0627624011401203,Valid,Breast Cancer,standardized
+Batch GD,2.0,0.057954236372589445,Valid,Breast Cancer,standardized
+Momentum,1e-05,0.6914411354725967,Valid,Breast Cancer,standardized
+Momentum,0.0001,0.6764651315187039,Valid,Breast Cancer,standardized
+Momentum,0.001,0.5581787407721454,Valid,Breast Cancer,standardized
+Momentum,0.01,0.25454509706699135,Valid,Breast Cancer,standardized
+Momentum,0.05,0.13151459249447117,Valid,Breast Cancer,standardized
+Momentum,0.1,0.10372799370530567,Valid,Breast Cancer,standardized
+Momentum,0.2,0.08402422107709853,Valid,Breast Cancer,standardized
+Momentum,0.5,0.06753119412346453,Valid,Breast Cancer,standardized
+Momentum,1.0,0.06242219326188492,Valid,Breast Cancer,standardized
+Momentum,2.0,0.06369235722761142,Valid,Breast Cancer,standardized
+SGD,0.0001,0.16055893363700058,Valid,Breast Cancer,standardized
+SGD,0.001,0.0801522059679331,Valid,Breast Cancer,standardized
+SGD,0.005,0.0580950152963365,Valid,Breast Cancer,standardized
+SGD,0.01,0.05510555943381058,Valid,Breast Cancer,standardized
+SGD,0.02,0.055594077145875165,Valid,Breast Cancer,standardized
+SGD,0.05,0.06103817781860379,Valid,Breast Cancer,standardized
+SGD,0.1,0.07197982445439355,Valid,Breast Cancer,standardized
+SGD,0.2,0.08988177819282774,Valid,Breast Cancer,standardized
+Adam,0.0001,0.6682605858366429,Valid,Banknote,original
+Adam,0.001,0.5251902869810727,Valid,Banknote,original
+Adam,0.005,0.2546609558694415,Valid,Banknote,original
+Adam,0.01,0.1473925856600244,Valid,Banknote,original
+Adam,0.02,0.07710748966849792,Valid,Banknote,original
+Adam,0.05,0.033143459166914066,Valid,Banknote,original
+Adam,0.1,0.02017409719156505,Valid,Banknote,original
+Adam,0.2,0.014342055371190517,Valid,Banknote,original
+Batch GD,1e-05,0.6901383323539142,Valid,Banknote,original
+Batch GD,0.0001,0.6654369204235284,Valid,Banknote,original
+Batch GD,0.001,0.5352177344683998,Valid,Banknote,original
+Batch GD,0.01,0.2625063171492289,Valid,Banknote,original
+Batch GD,0.05,0.1310891656770658,Valid,Banknote,original
+Batch GD,0.1,0.09511528367243068,Valid,Banknote,original
+Batch GD,0.2,0.0662320002803676,Valid,Banknote,original
+Batch GD,0.5,0.038770090898203,Valid,Banknote,original
+Batch GD,1.0,0.025608781461070287,Valid,Banknote,original
+Batch GD,2.0,0.0168940890046557,Valid,Banknote,original
+Momentum,1e-05,0.6904048945698356,Valid,Banknote,original
+Momentum,0.0001,0.6675720979247233,Valid,Banknote,original
+Momentum,0.001,0.5408087221808302,Valid,Banknote,original
+Momentum,0.01,0.2614537666377193,Valid,Banknote,original
+Momentum,0.05,0.12679508924087482,Valid,Banknote,original
+Momentum,0.1,0.09160945469307812,Valid,Banknote,original
+Momentum,0.2,0.06314375228701517,Valid,Banknote,original
+Momentum,0.5,0.03546716925184482,Valid,Banknote,original
+Momentum,1.0,0.02231874172622108,Valid,Banknote,original
+Momentum,2.0,0.014880968893305157,Valid,Banknote,original
+SGD,0.0001,0.10487730963642176,Valid,Banknote,original
+SGD,0.001,0.029070801606238966,Valid,Banknote,original
+SGD,0.005,0.013667752903332078,Valid,Banknote,original
+SGD,0.01,0.011534701795646769,Valid,Banknote,original
+SGD,0.02,0.011143859526569724,Valid,Banknote,original
+SGD,0.05,0.014428007422770093,Valid,Banknote,original
+SGD,0.1,0.045180031636048855,Valid,Banknote,original
+SGD,0.2,0.088893519153352,Valid,Banknote,original
+Adam,0.0001,0.6860924844352123,Valid,Banknote,standardized
+Adam,0.001,0.6318912127683861,Valid,Banknote,standardized
+Adam,0.005,0.48483567388046844,Valid,Banknote,standardized
+Adam,0.01,0.3585346432192312,Valid,Banknote,standardized
+Adam,0.02,0.2176476818824903,Valid,Banknote,standardized
+Adam,0.05,0.09163063940353085,Valid,Banknote,standardized
+Adam,0.1,0.04853346920791033,Valid,Banknote,standardized
+Adam,0.2,0.028224242476925267,Valid,Banknote,standardized
+Batch GD,1e-05,0.6929602376243001,Valid,Banknote,standardized
+Batch GD,0.0001,0.6912839270089467,Valid,Banknote,standardized
+Batch GD,0.001,0.6751142756351804,Valid,Banknote,standardized
+Batch GD,0.01,0.5578148358185736,Valid,Banknote,standardized
+Batch GD,0.05,0.36362273524258965,Valid,Banknote,standardized
+Batch GD,0.1,0.2726498037647613,Valid,Banknote,standardized
+Batch GD,0.2,0.18850587069981764,Valid,Banknote,standardized
+Batch GD,0.5,0.10678950157725205,Valid,Banknote,standardized
+Batch GD,1.0,0.06975634040705672,Valid,Banknote,standardized
+Batch GD,2.0,0.046968757979813876,Valid,Banknote,standardized
+Momentum,1e-05,0.6929770517686346,Valid,Banknote,standardized
+Momentum,0.0001,0.6914505940720203,Valid,Banknote,standardized
+Momentum,0.001,0.6766408996917955,Valid,Banknote,standardized
+Momentum,0.01,0.5646036061163239,Valid,Banknote,standardized
+Momentum,0.05,0.36839399126322714,Valid,Banknote,standardized
+Momentum,0.1,0.27562623363254724,Valid,Banknote,standardized
+Momentum,0.2,0.18774209060807692,Valid,Banknote,standardized
+Momentum,0.5,0.10092178700556531,Valid,Banknote,standardized
+Momentum,1.0,0.06286955907546926,Valid,Banknote,standardized
+Momentum,2.0,0.040291832459756836,Valid,Banknote,standardized
+SGD,0.0001,0.29861396724404893,Valid,Banknote,standardized
+SGD,0.001,0.0789880985027756,Valid,Banknote,standardized
+SGD,0.005,0.032545974947624276,Valid,Banknote,standardized
+SGD,0.01,0.023520794747819502,Valid,Banknote,standardized
+SGD,0.02,0.017677922468137482,Valid,Banknote,standardized
+SGD,0.05,0.013001145627109634,Valid,Banknote,standardized
+SGD,0.1,0.010936740671619156,Valid,Banknote,standardized
+SGD,0.2,0.009753788385419165,Valid,Banknote,standardized
+Adam,0.0001,0.6648880545013108,Valid,Ionosphere,original
+Adam,0.001,0.5584679936146624,Valid,Ionosphere,original
+Adam,0.005,0.487953414399162,Valid,Ionosphere,original
+Adam,0.01,0.469853592046924,Valid,Ionosphere,original
+Adam,0.02,0.47002236380542534,Valid,Ionosphere,original
+Adam,0.05,0.464790623001994,Valid,Ionosphere,original
+Adam,0.1,0.4807061413042098,Valid,Ionosphere,original
+Adam,0.2,0.5167040676541408,Valid,Ionosphere,original
+Batch GD,1e-05,0.6927689822177482,Valid,Ionosphere,original
+Batch GD,0.0001,0.6894117602417935,Valid,Ionosphere,original
+Batch GD,0.001,0.6600070109073499,Valid,Ionosphere,original
+Batch GD,0.01,0.5492842002206304,Valid,Ionosphere,original
+Batch GD,0.05,0.47663357564155656,Valid,Ionosphere,original
+Batch GD,0.1,0.44408501571455766,Valid,Ionosphere,original
+Batch GD,0.2,0.42042249727851644,Valid,Ionosphere,original
+Batch GD,0.5,0.41188343814669115,Valid,Ionosphere,original
+Batch GD,1.0,0.41111077569177523,Valid,Ionosphere,original
+Batch GD,2.0,0.4059064098879193,Valid,Ionosphere,original
+Momentum,1e-05,0.6928029370649966,Valid,Ionosphere,original
+Momentum,0.0001,0.6897398891675979,Valid,Ionosphere,original
+Momentum,0.001,0.6623281835771764,Valid,Ionosphere,original
+Momentum,0.01,0.5498117375200956,Valid,Ionosphere,original
+Momentum,0.05,0.4799632342292475,Valid,Ionosphere,original
+Momentum,0.1,0.4459229374976706,Valid,Ionosphere,original
+Momentum,0.2,0.4209019845427895,Valid,Ionosphere,original
+Momentum,0.5,0.4163330876267011,Valid,Ionosphere,original
+Momentum,1.0,0.41995563167652766,Valid,Ionosphere,original
+Momentum,2.0,0.4133486963224364,Valid,Ionosphere,original
+SGD,0.0001,0.5155834919022608,Valid,Ionosphere,original
+SGD,0.001,0.41940000808310246,Valid,Ionosphere,original
+SGD,0.005,0.41070692407127835,Valid,Ionosphere,original
+SGD,0.01,0.4059030945372155,Valid,Ionosphere,original
+SGD,0.02,0.4158871437264611,Valid,Ionosphere,original
+SGD,0.05,0.4708896711396624,Valid,Ionosphere,original
+SGD,0.1,0.5679708710386691,Valid,Ionosphere,original
+SGD,0.2,0.7044158926630029,Valid,Ionosphere,original
+Adam,0.0001,0.6610651911376791,Valid,Ionosphere,standardized
+Adam,0.001,0.5150745431571411,Valid,Ionosphere,standardized
+Adam,0.005,0.3967316466187008,Valid,Ionosphere,standardized
+Adam,0.01,0.37397461136263305,Valid,Ionosphere,standardized
+Adam,0.02,0.3667522695424391,Valid,Ionosphere,standardized
+Adam,0.05,0.4241045178407224,Valid,Ionosphere,standardized
+Adam,0.1,0.5105042689480388,Valid,Ionosphere,standardized
+Adam,0.2,0.579032884610843,Valid,Ionosphere,standardized
+Batch GD,1e-05,0.6926940119659238,Valid,Ionosphere,standardized
+Batch GD,0.0001,0.6886550895273775,Valid,Ionosphere,standardized
+Batch GD,0.001,0.6518755144401297,Valid,Ionosphere,standardized
+Batch GD,0.01,0.4700944959268681,Valid,Ionosphere,standardized
+Batch GD,0.05,0.33500194749481377,Valid,Ionosphere,standardized
+Batch GD,0.1,0.30983911608345455,Valid,Ionosphere,standardized
+Batch GD,0.2,0.3001541442587364,Valid,Ionosphere,standardized
+Batch GD,0.5,0.30411428387225575,Valid,Ionosphere,standardized
+Batch GD,1.0,0.3176675717803723,Valid,Ionosphere,standardized
+Batch GD,2.0,0.355490588685578,Valid,Ionosphere,standardized
+Momentum,1e-05,0.6927347247488681,Valid,Ionosphere,standardized
+Momentum,0.0001,0.6890523526137816,Valid,Ionosphere,standardized
+Momentum,0.001,0.6549936649107249,Valid,Ionosphere,standardized
+Momentum,0.01,0.47407899480113236,Valid,Ionosphere,standardized
+Momentum,0.05,0.33273588823710837,Valid,Ionosphere,standardized
+Momentum,0.1,0.3073743352198696,Valid,Ionosphere,standardized
+Momentum,0.2,0.29935041009040336,Valid,Ionosphere,standardized
+Momentum,0.5,0.3083838200249617,Valid,Ionosphere,standardized
+Momentum,1.0,0.3188240020883481,Valid,Ionosphere,standardized
+Momentum,2.0,0.35376042515663125,Valid,Ionosphere,standardized
+SGD,0.0001,0.3959780642761964,Valid,Ionosphere,standardized
+SGD,0.001,0.30002607331016545,Valid,Ionosphere,standardized
+SGD,0.005,0.31871408144472263,Valid,Ionosphere,standardized
+SGD,0.01,0.358356308897869,Valid,Ionosphere,standardized
+SGD,0.02,0.43223905888372466,Valid,Ionosphere,standardized
+SGD,0.05,0.552974278151421,Valid,Ionosphere,standardized
+SGD,0.1,0.6597594627620966,Valid,Ionosphere,standardized
+SGD,0.2,0.8444668137687847,Valid,Ionosphere,standardized

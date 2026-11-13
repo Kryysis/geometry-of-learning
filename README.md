@@ -1,39 +1,121 @@
 # The Geometry of Learning
 
-## Research Overview
+**Investigating the Effects of Loss Landscape Conditioning on Optimization Algorithms in Machine Learning**
 
-Investigating the effects of loss landscape conditioning on optimization algorithms in machine learning.
+This repository contains a reproducible experimental study of how objective-function curvature and feature scaling interact with first-order optimizers. The implementation uses logistic regression written with NumPy and compares Batch Gradient Descent, Stochastic Gradient Descent (SGD), Momentum, and Adam.
 
-This project studies how the geometry of an optimization problem influences the convergence behaviour and performance of different optimization algorithms.
+## Project structure
 
-## Research Objectives
+```text
+Geometry-of-Learning-Final/
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── src/
+│   ├── __init__.py
+│   ├── datasets.py
+│   ├── logistic_regression.py
+│   └── optimizers.py
+├── notebooks/
+│   ├── 01_Mathematical_Foundations.ipynb
+│   ├── 02_Optimizer_Comparison.ipynb
+│   ├── 03_Real_Dataset_Experiments.ipynb
+│   └── 04_Final_Experiments.ipynb
+├── data/
+├── results/
+│   ├── figures/
+│   └── tables/
+├── paper/
+└── tests/
+    └── test_core.py
+```
 
-1. Investigate the relationship between loss landscape conditioning and optimization convergence.
-2. Compare different optimization algorithms.
-3. Examine the effects of feature scaling and other optimization components.
-4. Evaluate whether experimental observations generalize across independent datasets.
+## Environment setup
 
-## Methods
+Use Python 3.10 or newer. From the repository root:
 
-- Logistic Regression
-- Batch Gradient Descent
-- Stochastic Gradient Descent
-- Momentum
-- Adam
+```bash
+python -m venv .venv
+```
 
-## Mathematical Foundations
+Activate the environment, then install the dependencies:
 
-- Gradient and Hessian
-- Eigenvalues and eigenvectors
-- Condition numbers
-- Loss landscape geometry
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
 
-## Experimental Requirements
+Run the core implementation tests:
 
-- Ablation Study
-- Statistical Analysis
-- Cross-Dataset Validation
+```bash
+python -m unittest discover -s tests -v
+```
 
-## Project Status
+Start Jupyter from the repository root:
 
-Under development.
+```bash
+jupyter notebook
+```
+
+Run the notebooks in numerical order, preferably from a fresh kernel for each notebook. Each notebook locates the repository root from the working directory and imports the shared source modules. Restart the kernel after modifying a source module before rerunning a notebook from the top.
+
+## Notebook guide
+
+| Notebook | Role |
+|---|---|
+| `01_Mathematical_Foundations.ipynb` | Defines the logistic-regression objective, gradient, and Hessian; verifies the analytical derivatives numerically. |
+| `02_Optimizer_Comparison.ipynb` | Demonstrates the four optimizers on a reproducible synthetic binary-classification problem. This is illustrative, not the final statistical benchmark. |
+| `03_Real_Dataset_Experiments.ipynb` | Profiles the three datasets and compares local Hessian conditioning before and after standardization. |
+| `04_Final_Experiments.ipynb` | Runs the repeated real-dataset comparison and the controlled quadratic conditioning experiment, including statistical analyses and figures. |
+
+## Datasets
+
+The study uses:
+
+- **Breast Cancer Wisconsin Diagnostic** (available through scikit-learn's dataset loader)
+- **Banknote Authentication** (OpenML, version 1)
+- **Ionosphere** (OpenML, version 1)
+
+The two OpenML datasets require an internet connection for their first download. Scikit-learn caches successfully downloaded OpenML datasets locally, so a later run can usually use the cache. The project does not place external dataset copies in the repository.
+
+## Experimental design summary
+
+### Real datasets
+
+The final repeated study evaluates three datasets, two feature conditions (`original` and `standardized`), four optimizers, and ten evaluation seeds, for **240 experimental runs**. Learning rates are selected using a separate tuning seed. Each final seed creates stratified train/validation/test partitions; constant-feature removal and standardization are fitted using the training partition only. Early stopping uses validation log loss; test metrics are computed after restoring the best validation parameters.
+
+Batch GD, Momentum, and Adam use full-batch updates; SGD uses one observation per update. Parameter-update counts and elapsed training time therefore have different computational interpretations across optimizers.
+
+### Controlled quadratic experiment
+
+The objective is
+
+\[
+ f(\theta)=\frac{1}{2}\theta^T
+ \begin{bmatrix}1&0\\0&\kappa\end{bmatrix}\theta,
+ \qquad \kappa\in\{1,10,100,1000,10000\}.
+\]
+
+Learning rates are tuned independently for each optimizer and condition number. Evaluation uses ten seeds per optimizer/condition-number pair, producing **200 runs**. Convergence requires the loss to remain at or below `1e-8` for ten consecutive updates, with a maximum of 5,000 updates. A stable run that does not meet the threshold is reported as non-converged, not unstable.
+
+The Momentum implementation uses an exponential moving average of gradients:
+
+\[
+ v_t=\beta v_{t-1}+(1-\beta)g_t,\qquad
+ \theta_{t+1}=\theta_t-\eta v_t.
+\]
+
+This is not the unnormalized heavy-ball convention. The quadratic SGD experiment uses unbiased stochastic coordinate sampling, not observation mini-batches.
+
+## Outputs
+
+Generated CSV tables are saved under `results/tables/`; generated plots are saved under `results/figures/`. The notebooks intentionally ship without old cell outputs so that results are generated by the current code when executed. This avoids displaying stale outputs from earlier exploratory versions.
+
+## Interpretation cautions
+
+- Hessian condition numbers in Notebook 03 are local diagnostics evaluated at the zero parameter vector.
+- Notebook 02 is an illustrative optimizer demonstration and is not a controlled equal-compute comparison.
+- Learning rates are tuned within finite candidate grids. A selected boundary rate means the best observed candidate may lie outside the tested range.
+- Equal optimizer-update budgets in the quadratic experiment do not imply equal arithmetic cost.
+- Ten evaluation seeds provide repeated evidence but still yield limited statistical power. Discuss descriptive effect sizes alongside corrected p-values.
+- The real-dataset study evaluates the optimizer patterns independently across datasets; it is not a cross-dataset train-on-one/test-on-another transfer experiment.
