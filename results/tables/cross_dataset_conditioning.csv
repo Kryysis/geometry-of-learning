@@ -1,0 +1,7 @@
+Dataset,Condition,Minimum Eigenvalue,Maximum Eigenvalue,Condition Number,Evaluation Point,Data Used
+Breast Cancer,original,1.5525555486246758e-07,430378.712936042,2772066439845.178,theta = 0,Tuning training partition from development pool
+Breast Cancer,standardized,2.4131713095513295e-05,3.3788887565150016,140018.60303578278,theta = 0,Tuning training partition from development pool
+Banknote,original,0.09855038134701435,13.175241442171728,133.69041562385513,theta = 0,Tuning training partition from development pool
+Banknote,standardized,0.04414578294694213,0.5437396279035466,12.316909829350086,theta = 0,Tuning training partition from development pool
+Ionosphere,original,0.0035779061397387827,1.7448458229361394,487.6723297899447,theta = 0,Tuning training partition from development pool
+Ionosphere,standardized,0.012861394937302394,2.1478346907380095,166.99857995251924,theta = 0,Tuning training partition from development pool

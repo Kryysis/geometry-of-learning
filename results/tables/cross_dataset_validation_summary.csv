@@ -1,0 +1,4 @@
+Dataset,Mean Accuracy Change Across Optimizers,Mean Log Loss Improvement Across Optimizers,Optimizers with Accuracy Improvement,Optimizers with Log Loss Improvement,Original Condition Number,Standardized Condition Number,Condition-Number Reduction (%)
+Banknote,-0.002090909090909104,-0.007259073661828277,2,1,133.69041562385513,12.316909829350086,90.78699114527076
+Breast Cancer,0.1162280701754386,0.3877089489096459,4,4,2772066439845.178,140018.60303578278,99.9999949489449
+Ionosphere,0.006690140845070416,0.04363885266400153,3,4,487.6723297899447,166.99857995251924,65.75598619170158

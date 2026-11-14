@@ -1,0 +1,5 @@
+Optimizer,Datasets with Positive Mean Accuracy Change,Datasets with Positive Mean Log Loss Improvement,Mean Accuracy Change Across Datasets,Mean Log Loss Improvement Across Datasets
+Adam,3,2,0.011375908828836934,0.03301320081848632
+Batch GD,2,2,0.12356687707317802,0.1909015668467722
+Momentum,2,2,0.013758369461853506,0.04090154098398547
+SGD,2,3,0.012401913875598079,0.30063532856651487

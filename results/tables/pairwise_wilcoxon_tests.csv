@@ -1,73 +1,73 @@
 Dataset,Condition,Metric,Optimizer A,Optimizer B,Wilcoxon Statistic,Raw P-value,Mean Difference (A - B),Rank-Biserial Effect,Within-Group Holm P-value,Significant Within Group,Global Holm P-value,Significant After Global Holm
-Breast Cancer,original,Test Log Loss,Adam,Batch GD,0.0,0.001953125,-0.46549630934329783,-1.0,0.01171875,True,0.140625,False
-Breast Cancer,original,Test Log Loss,Adam,Momentum,3.0,0.009765625,-0.0453804660235085,-0.8909090909090909,0.01171875,True,0.5078125,False
-Breast Cancer,original,Test Log Loss,Adam,SGD,0.0,0.001953125,-1.2509184440418655,-1.0,0.01171875,True,0.140625,False
-Breast Cancer,original,Test Log Loss,Batch GD,Momentum,0.0,0.001953125,0.4201158433197894,1.0,0.01171875,True,0.140625,False
-Breast Cancer,original,Test Log Loss,Batch GD,SGD,0.0,0.001953125,-0.7854221346985677,-1.0,0.01171875,True,0.140625,False
-Breast Cancer,original,Test Log Loss,Momentum,SGD,0.0,0.001953125,-1.205537978018357,-1.0,0.01171875,True,0.140625,False
-Breast Cancer,original,Test Accuracy,Adam,Batch GD,0.0,0.001953125,0.4131578947368421,1.0,0.01171875,True,0.140625,False
-Breast Cancer,original,Test Accuracy,Adam,Momentum,3.0,0.009765625,0.019298245614035103,0.8909090909090909,0.01953125,True,0.5078125,False
-Breast Cancer,original,Test Accuracy,Adam,SGD,1.5,0.005859375,0.030701754385964907,0.9454545454545454,0.01953125,True,0.310546875,False
-Breast Cancer,original,Test Accuracy,Batch GD,Momentum,0.0,0.00390625,-0.39385964912280697,-1.0,0.01953125,True,0.2265625,False
-Breast Cancer,original,Test Accuracy,Batch GD,SGD,1.0,0.00390625,-0.3824561403508772,-0.9636363636363636,0.01953125,True,0.2265625,False
-Breast Cancer,original,Test Accuracy,Momentum,SGD,2.0,0.125,0.011403508771929804,0.8095238095238095,0.125,False,1.0,False
-Breast Cancer,standardized,Test Log Loss,Adam,Batch GD,14.0,0.193359375,0.006573244755509635,0.4909090909090909,1.0,False,1.0,False
-Breast Cancer,standardized,Test Log Loss,Adam,Momentum,23.0,0.6953125,0.005499447885207188,0.16363636363636364,1.0,False,1.0,False
-Breast Cancer,standardized,Test Log Loss,Adam,SGD,15.0,0.232421875,0.005507828445082928,0.45454545454545453,1.0,False,1.0,False
-Breast Cancer,standardized,Test Log Loss,Batch GD,Momentum,19.0,0.431640625,-0.0010737968703024455,-0.3090909090909091,1.0,False,1.0,False
-Breast Cancer,standardized,Test Log Loss,Batch GD,SGD,18.0,0.375,-0.0010654163104267065,-0.34545454545454546,1.0,False,1.0,False
-Breast Cancer,standardized,Test Log Loss,Momentum,SGD,25.0,0.845703125,8.38055987573902e-06,0.09090909090909091,1.0,False,1.0,False
-Breast Cancer,standardized,Test Accuracy,Adam,Batch GD,6.0,0.5,-0.0017543859649122862,-0.42857142857142855,1.0,False,1.0,False
-Breast Cancer,standardized,Test Accuracy,Adam,Momentum,10.0,0.9375,0.0008771929824561209,-0.047619047619047616,1.0,False,1.0,False
-Breast Cancer,standardized,Test Accuracy,Adam,SGD,10.0,0.3359375,-0.0017543859649122972,-0.4444444444444444,1.0,False,1.0,False
-Breast Cancer,standardized,Test Accuracy,Batch GD,Momentum,2.5,0.5,0.002631578947368407,0.5,1.0,False,1.0,False
-Breast Cancer,standardized,Test Accuracy,Batch GD,SGD,1.0,1.0,-1.1102230246251566e-17,-0.3333333333333333,1.0,False,1.0,False
-Breast Cancer,standardized,Test Accuracy,Momentum,SGD,5.5,0.40625,-0.002631578947368418,-0.47619047619047616,1.0,False,1.0,False
-Banknote,original,Test Log Loss,Adam,Batch GD,22.0,0.625,0.001196402818169046,0.2,1.0,False,1.0,False
-Banknote,original,Test Log Loss,Adam,Momentum,18.0,0.375,0.0015705281718940915,0.34545454545454546,1.0,False,1.0,False
-Banknote,original,Test Log Loss,Adam,SGD,19.0,0.431640625,0.0016997165057432216,0.3090909090909091,1.0,False,1.0,False
-Banknote,original,Test Log Loss,Batch GD,Momentum,18.0,0.375,0.0003741253537250458,0.34545454545454546,1.0,False,1.0,False
-Banknote,original,Test Log Loss,Batch GD,SGD,25.0,0.845703125,0.0005033136875741758,0.09090909090909091,1.0,False,1.0,False
-Banknote,original,Test Log Loss,Momentum,SGD,26.0,0.921875,0.00012918833384912998,-0.05454545454545454,1.0,False,1.0,False
-Banknote,original,Test Accuracy,Adam,Batch GD,5.5,0.8125,0.000363636363636366,0.26666666666666666,1.0,False,1.0,False
-Banknote,original,Test Accuracy,Adam,Momentum,5.5,0.8125,0.000363636363636366,0.26666666666666666,1.0,False,1.0,False
-Banknote,original,Test Accuracy,Adam,SGD,11.5,0.84375,0.000363636363636366,0.17857142857142858,1.0,False,1.0,False
-Banknote,original,Test Accuracy,Batch GD,Momentum,0.0,1.0,0.0,0.0,1.0,False,1.0,False
-Banknote,original,Test Accuracy,Batch GD,SGD,3.0,1.0,0.0,0.0,1.0,False,1.0,False
-Banknote,original,Test Accuracy,Momentum,SGD,3.0,1.0,0.0,0.0,1.0,False,1.0,False
-Banknote,standardized,Test Log Loss,Adam,Batch GD,0.0,0.001953125,-0.011765128727428893,-1.0,0.01171875,True,0.140625,False
-Banknote,standardized,Test Log Loss,Adam,Momentum,0.0,0.001953125,-0.010390535134784646,-1.0,0.01171875,True,0.140625,False
-Banknote,standardized,Test Log Loss,Adam,SGD,0.0,0.001953125,0.005528482790543569,1.0,0.01171875,True,0.140625,False
-Banknote,standardized,Test Log Loss,Batch GD,Momentum,0.0,0.001953125,0.0013745935926442454,1.0,0.01171875,True,0.140625,False
-Banknote,standardized,Test Log Loss,Batch GD,SGD,0.0,0.001953125,0.017293611517972464,1.0,0.01171875,True,0.140625,False
-Banknote,standardized,Test Log Loss,Momentum,SGD,0.0,0.001953125,0.015919017925328217,1.0,0.01171875,True,0.140625,False
-Banknote,standardized,Test Accuracy,Adam,Batch GD,0.0,0.001953125,0.00654545454545451,1.0,0.01171875,True,0.140625,False
-Banknote,standardized,Test Accuracy,Adam,Momentum,0.0,0.001953125,0.00654545454545451,1.0,0.01171875,True,0.140625,False
-Banknote,standardized,Test Accuracy,Adam,SGD,3.0,0.25,-0.00036363636363638817,-0.6,0.5,False,1.0,False
+Breast Cancer,original,Test Log Loss,Adam,Batch GD,0.0,0.001953125,-0.4859650169463471,-1.0,0.01171875,True,0.140625,False
+Breast Cancer,original,Test Log Loss,Adam,Momentum,0.0,0.001953125,-0.03893079389244525,-1.0,0.01171875,True,0.140625,False
+Breast Cancer,original,Test Log Loss,Adam,SGD,0.0,0.001953125,-0.8023054058533301,-1.0,0.01171875,True,0.140625,False
+Breast Cancer,original,Test Log Loss,Batch GD,Momentum,0.0,0.001953125,0.4470342230539018,1.0,0.01171875,True,0.140625,False
+Breast Cancer,original,Test Log Loss,Batch GD,SGD,0.0,0.001953125,-0.316340388906983,-1.0,0.01171875,True,0.140625,False
+Breast Cancer,original,Test Log Loss,Momentum,SGD,0.0,0.001953125,-0.763374611960885,-1.0,0.01171875,True,0.140625,False
+Breast Cancer,original,Test Accuracy,Adam,Batch GD,0.0,0.001953125,0.35263157894736846,1.0,0.01171875,True,0.140625,False
+Breast Cancer,original,Test Accuracy,Adam,Momentum,0.0,0.00390625,0.016666666666666618,1.0,0.01953125,True,0.1796875,False
+Breast Cancer,original,Test Accuracy,Adam,SGD,0.0,0.015625,0.012280701754385958,1.0,0.03125,True,0.625,False
+Breast Cancer,original,Test Accuracy,Batch GD,Momentum,3.0,0.009765625,-0.33596491228070174,-0.8909090909090909,0.029296875,True,0.400390625,False
+Breast Cancer,original,Test Accuracy,Batch GD,SGD,0.0,0.00390625,-0.34035087719298246,-1.0,0.01953125,True,0.1796875,False
+Breast Cancer,original,Test Accuracy,Momentum,SGD,12.5,0.4453125,-0.00438596491228066,-0.3055555555555556,0.4453125,False,1.0,False
+Breast Cancer,standardized,Test Log Loss,Adam,Batch GD,2.0,0.005859375,0.016173300459763847,0.9272727272727272,0.0234375,True,0.24609375,False
+Breast Cancer,standardized,Test Log Loss,Adam,Momentum,1.0,0.00390625,0.01601046642600377,0.9636363636363636,0.01953125,True,0.1796875,False
+Breast Cancer,standardized,Test Log Loss,Adam,SGD,0.0,0.001953125,0.01785779726215438,1.0,0.01171875,True,0.140625,False
+Breast Cancer,standardized,Test Log Loss,Batch GD,Momentum,18.0,0.375,-0.00016283403376007172,0.34545454545454546,1.0,False,1.0,False
+Breast Cancer,standardized,Test Log Loss,Batch GD,SGD,18.0,0.375,0.0016844968023905324,0.34545454545454546,1.0,False,1.0,False
+Breast Cancer,standardized,Test Log Loss,Momentum,SGD,25.0,0.845703125,0.0018473308361506042,0.09090909090909091,1.0,False,1.0,False
+Breast Cancer,standardized,Test Accuracy,Adam,Batch GD,3.5,0.75,-0.001754385964912264,-0.3,1.0,False,1.0,False
+Breast Cancer,standardized,Test Accuracy,Adam,Momentum,5.5,0.171875,-0.004385964912280682,-0.6071428571428571,0.6875,False,1.0,False
+Breast Cancer,standardized,Test Accuracy,Adam,SGD,3.5,0.09375,-0.007017543859649089,-0.75,0.5625,False,1.0,False
+Breast Cancer,standardized,Test Accuracy,Batch GD,Momentum,6.0,0.34375,-0.002631578947368418,-0.42857142857142855,1.0,False,1.0,False
+Breast Cancer,standardized,Test Accuracy,Batch GD,SGD,0.0,0.125,-0.0052631578947368255,-1.0,0.625,False,1.0,False
+Breast Cancer,standardized,Test Accuracy,Momentum,SGD,6.0,0.8125,-0.002631578947368407,-0.2,1.0,False,1.0,False
+Banknote,original,Test Log Loss,Adam,Batch GD,24.0,0.76953125,0.001129574528394939,0.12727272727272726,1.0,False,1.0,False
+Banknote,original,Test Log Loss,Adam,Momentum,10.0,0.083984375,0.0010475034850553962,0.6363636363636364,0.50390625,False,1.0,False
+Banknote,original,Test Log Loss,Adam,SGD,20.0,0.4921875,0.0008174031618253631,0.2727272727272727,1.0,False,1.0,False
+Banknote,original,Test Log Loss,Batch GD,Momentum,10.0,0.083984375,-8.207104333954294e-05,0.6363636363636364,0.50390625,False,1.0,False
+Banknote,original,Test Log Loss,Batch GD,SGD,23.0,0.6953125,-0.00031217136656957605,0.16363636363636364,1.0,False,1.0,False
+Banknote,original,Test Log Loss,Momentum,SGD,26.0,0.921875,-0.0002301003232300331,-0.05454545454545454,1.0,False,1.0,False
+Banknote,original,Test Accuracy,Adam,Batch GD,0.0,0.5,-0.000727272727272732,-1.0,1.0,False,1.0,False
+Banknote,original,Test Accuracy,Adam,Momentum,1.0,1.0,0.000363636363636366,0.3333333333333333,1.0,False,1.0,False
+Banknote,original,Test Accuracy,Adam,SGD,13.5,0.7265625,-0.000727272727272732,-0.25,1.0,False,1.0,False
+Banknote,original,Test Accuracy,Batch GD,Momentum,0.0,0.5,0.0010909090909090979,1.0,1.0,False,1.0,False
+Banknote,original,Test Accuracy,Batch GD,SGD,18.0,1.0,0.0,0.0,1.0,False,1.0,False
+Banknote,original,Test Accuracy,Momentum,SGD,15.0,0.5078125,-0.0010909090909090979,-0.3333333333333333,1.0,False,1.0,False
+Banknote,standardized,Test Log Loss,Adam,Batch GD,0.0,0.001953125,-0.008818529900684147,-1.0,0.01171875,True,0.140625,False
+Banknote,standardized,Test Log Loss,Adam,Momentum,0.0,0.001953125,-0.007594707671917833,-1.0,0.01171875,True,0.140625,False
+Banknote,standardized,Test Log Loss,Adam,SGD,0.0,0.001953125,0.004805900634433907,1.0,0.01171875,True,0.140625,False
+Banknote,standardized,Test Log Loss,Batch GD,Momentum,0.0,0.001953125,0.001223822228766315,1.0,0.01171875,True,0.140625,False
+Banknote,standardized,Test Log Loss,Batch GD,SGD,0.0,0.001953125,0.013624430535118054,1.0,0.01171875,True,0.140625,False
+Banknote,standardized,Test Log Loss,Momentum,SGD,0.0,0.001953125,0.01240060830635174,1.0,0.01171875,True,0.140625,False
+Banknote,standardized,Test Accuracy,Adam,Batch GD,0.0,0.001953125,0.005818181818181856,1.0,0.01171875,True,0.140625,False
+Banknote,standardized,Test Accuracy,Adam,Momentum,0.0,0.001953125,0.005818181818181856,1.0,0.01171875,True,0.140625,False
+Banknote,standardized,Test Accuracy,Adam,SGD,5.0,1.0,0.0,0.0,1.0,False,1.0,False
 Banknote,standardized,Test Accuracy,Batch GD,Momentum,0.0,1.0,0.0,0.0,1.0,False,1.0,False
-Banknote,standardized,Test Accuracy,Batch GD,SGD,0.0,0.00390625,-0.006909090909090898,-1.0,0.015625,True,0.2265625,False
-Banknote,standardized,Test Accuracy,Momentum,SGD,0.0,0.00390625,-0.006909090909090898,-1.0,0.015625,True,0.2265625,False
-Ionosphere,original,Test Log Loss,Adam,Batch GD,7.0,0.037109375,0.06664999794514684,0.7454545454545455,0.22265625,False,1.0,False
-Ionosphere,original,Test Log Loss,Adam,Momentum,7.0,0.037109375,0.060426735212976056,0.7454545454545455,0.22265625,False,1.0,False
-Ionosphere,original,Test Log Loss,Adam,SGD,7.0,0.037109375,0.07130235924194399,0.7454545454545455,0.22265625,False,1.0,False
-Ionosphere,original,Test Log Loss,Batch GD,Momentum,16.0,0.275390625,-0.006223262732170781,-0.41818181818181815,0.275390625,False,1.0,False
-Ionosphere,original,Test Log Loss,Batch GD,SGD,10.0,0.083984375,0.004652361296797164,0.6363636363636364,0.251953125,False,1.0,False
-Ionosphere,original,Test Log Loss,Momentum,SGD,12.0,0.130859375,0.010875624028967945,0.5636363636363636,0.26171875,False,1.0,False
-Ionosphere,original,Test Accuracy,Adam,Batch GD,0.0,0.00390625,-0.03521126760563379,-1.0,0.0234375,True,0.2265625,False
-Ionosphere,original,Test Accuracy,Adam,Momentum,5.0,0.0234375,-0.029577464788732376,-0.8181818181818182,0.1171875,False,1.0,False
-Ionosphere,original,Test Accuracy,Adam,SGD,6.0,0.033203125,-0.030985915492957726,-0.7818181818181819,0.1328125,False,1.0,False
-Ionosphere,original,Test Accuracy,Batch GD,Momentum,0.0,0.125,0.005633802816901412,1.0,0.375,False,1.0,False
-Ionosphere,original,Test Accuracy,Batch GD,SGD,2.5,0.3125,0.004225352112676062,0.6666666666666666,0.625,False,1.0,False
-Ionosphere,original,Test Accuracy,Momentum,SGD,1.0,1.0,-0.0014084507042253502,-0.3333333333333333,1.0,False,1.0,False
-Ionosphere,standardized,Test Log Loss,Adam,Batch GD,5.0,0.01953125,0.028318852407577543,0.8181818181818182,0.1171875,False,0.9765625,False
-Ionosphere,standardized,Test Log Loss,Adam,Momentum,7.0,0.037109375,0.02925964689327354,0.7454545454545455,0.1484375,False,1.0,False
-Ionosphere,standardized,Test Log Loss,Adam,SGD,5.0,0.01953125,0.027685316256945026,0.8181818181818182,0.1171875,False,0.9765625,False
-Ionosphere,standardized,Test Log Loss,Batch GD,Momentum,21.0,0.556640625,0.0009407944856959921,0.23636363636363636,0.556640625,False,1.0,False
-Ionosphere,standardized,Test Log Loss,Batch GD,SGD,10.0,0.083984375,-0.000633536150632516,-0.6363636363636364,0.251953125,False,1.0,False
-Ionosphere,standardized,Test Log Loss,Momentum,SGD,16.0,0.275390625,-0.0015743306363285082,-0.41818181818181815,0.55078125,False,1.0,False
-Ionosphere,standardized,Test Accuracy,Adam,Batch GD,2.0,0.125,-0.012676056338028175,-0.8095238095238095,0.75,False,1.0,False
-Ionosphere,standardized,Test Accuracy,Adam,Momentum,4.0,0.25,-0.008450704225352124,-0.6190476190476191,1.0,False,1.0,False
-Ionosphere,standardized,Test Accuracy,Adam,SGD,2.0,0.125,-0.012676056338028175,-0.8095238095238095,0.75,False,1.0,False
-Ionosphere,standardized,Test Accuracy,Batch GD,Momentum,0.0,0.25,0.004225352112676051,1.0,1.0,False,1.0,False
+Banknote,standardized,Test Accuracy,Batch GD,SGD,0.0,0.001953125,-0.005818181818181856,-1.0,0.01171875,True,0.140625,False
+Banknote,standardized,Test Accuracy,Momentum,SGD,0.0,0.001953125,-0.005818181818181856,-1.0,0.01171875,True,0.140625,False
+Ionosphere,original,Test Log Loss,Adam,Batch GD,0.0,0.001953125,0.04506185743987719,1.0,0.01171875,True,0.140625,False
+Ionosphere,original,Test Log Loss,Adam,Momentum,0.0,0.001953125,0.051981142780978075,1.0,0.01171875,True,0.140625,False
+Ionosphere,original,Test Log Loss,Adam,SGD,0.0,0.001953125,0.047726156337644425,1.0,0.01171875,True,0.140625,False
+Ionosphere,original,Test Log Loss,Batch GD,Momentum,7.0,0.037109375,0.0069192853411008835,0.7454545454545455,0.07421875,False,1.0,False
+Ionosphere,original,Test Log Loss,Batch GD,SGD,0.0,0.001953125,0.0026642988977672367,1.0,0.01171875,True,0.140625,False
+Ionosphere,original,Test Log Loss,Momentum,SGD,20.0,0.4921875,-0.004254986443333647,-0.2727272727272727,0.4921875,False,1.0,False
+Ionosphere,original,Test Accuracy,Adam,Batch GD,2.0,0.125,-0.01971830985915495,-0.8095238095238095,0.5,False,1.0,False
+Ionosphere,original,Test Accuracy,Adam,Momentum,2.0,0.03125,-0.02112676056338032,-0.8888888888888888,0.1875,False,1.0,False
+Ionosphere,original,Test Accuracy,Adam,SGD,0.0,0.0625,-0.02394366197183101,-1.0,0.3125,False,1.0,False
+Ionosphere,original,Test Accuracy,Batch GD,Momentum,1.0,0.5,-0.0014084507042253724,-0.6666666666666666,1.0,False,1.0,False
+Ionosphere,original,Test Accuracy,Batch GD,SGD,0.0,0.5,-0.004225352112676062,-1.0,1.0,False,1.0,False
+Ionosphere,original,Test Accuracy,Momentum,SGD,7.0,1.0,-0.002816901408450689,-0.06666666666666667,1.0,False,1.0,False
+Ionosphere,standardized,Test Log Loss,Adam,Batch GD,0.0,0.001953125,0.026536742547703045,1.0,0.01171875,True,0.140625,False
+Ionosphere,standardized,Test Log Loss,Adam,Momentum,0.0,0.001953125,0.029347114115999717,1.0,0.01171875,True,0.140625,False
+Ionosphere,standardized,Test Log Loss,Adam,SGD,0.0,0.001953125,0.026440838993637184,1.0,0.01171875,True,0.140625,False
+Ionosphere,standardized,Test Log Loss,Batch GD,Momentum,1.0,0.00390625,0.0028103715682966713,0.9636363636363636,0.01171875,True,0.1796875,False
+Ionosphere,standardized,Test Log Loss,Batch GD,SGD,12.0,0.130859375,-9.59035540658626e-05,-0.5636363636363636,0.130859375,False,1.0,False
+Ionosphere,standardized,Test Log Loss,Momentum,SGD,0.0,0.001953125,-0.002906275122362534,-1.0,0.01171875,True,0.140625,False
+Ionosphere,standardized,Test Accuracy,Adam,Batch GD,6.0,0.203125,-0.008450704225352134,-0.5714285714285714,1.0,False,1.0,False
+Ionosphere,standardized,Test Accuracy,Adam,Momentum,1.5,0.0234375,-0.012676056338028218,-0.9166666666666666,0.140625,False,0.9140625,False
+Ionosphere,standardized,Test Accuracy,Adam,SGD,6.0,0.203125,-0.008450704225352134,-0.5714285714285714,1.0,False,1.0,False
+Ionosphere,standardized,Test Accuracy,Batch GD,Momentum,0.0,0.25,-0.004225352112676084,-1.0,1.0,False,1.0,False
 Ionosphere,standardized,Test Accuracy,Batch GD,SGD,0.0,1.0,0.0,0.0,1.0,False,1.0,False
-Ionosphere,standardized,Test Accuracy,Momentum,SGD,0.0,0.25,-0.004225352112676051,-1.0,1.0,False,1.0,False
+Ionosphere,standardized,Test Accuracy,Momentum,SGD,0.0,0.25,0.004225352112676084,1.0,1.0,False,1.0,False

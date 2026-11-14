@@ -1,0 +1,4 @@
+Dataset,Total Observations,Development Observations,Fixed Test Observations,Fixed Test Fraction,Holdout Seed,Development/Test Indices Disjoint
+Breast Cancer,569,455,114,0.20035149384885764,2026,True
+Banknote,1372,1097,275,0.20043731778425655,2026,True
+Ionosphere,351,280,71,0.2022792022792023,2026,True

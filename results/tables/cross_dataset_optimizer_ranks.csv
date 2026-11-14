@@ -1,0 +1,13 @@
+Dataset,Optimizer,Accuracy Rank,Log Loss Rank
+Banknote,Adam,2.25,3.0
+Banknote,Batch GD,2.5,2.5
+Banknote,Momentum,3.75,2.5
+Banknote,SGD,1.5,2.0
+Breast Cancer,Adam,2.5,2.5
+Breast Cancer,Batch GD,3.5,2.5
+Breast Cancer,Momentum,2.5,2.5
+Breast Cancer,SGD,1.5,2.5
+Ionosphere,Adam,4.0,4.0
+Ionosphere,Batch GD,2.75,2.5
+Ionosphere,Momentum,1.5,1.0
+Ionosphere,SGD,1.75,2.5
