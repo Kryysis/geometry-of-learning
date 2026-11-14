@@ -90,20 +90,20 @@ Batch GD, Momentum, and Adam use full-batch updates; SGD uses one observation pe
 
 The objective is
 
-\[
+$$
  f(\theta)=\frac{1}{2}\theta^T
  \begin{bmatrix}1&0\\0&\kappa\end{bmatrix}\theta,
  \qquad \kappa\in\{1,10,100,1000,10000\}.
-\]
+$$
 
 Learning rates are tuned independently for each optimizer and condition number. Evaluation uses ten seeds per optimizer/condition-number pair, producing **200 runs**. Convergence requires the loss to remain at or below `1e-8` for ten consecutive updates, with a maximum of 5,000 updates. A stable run that does not meet the threshold is reported as non-converged, not unstable.
 
 The Momentum implementation uses an exponential moving average of gradients:
 
-\[
+$$
  v_t=\beta v_{t-1}+(1-\beta)g_t,\qquad
  \theta_{t+1}=\theta_t-\eta v_t.
-\]
+$$
 
 This is not the unnormalized heavy-ball convention. The quadratic SGD experiment uses unbiased stochastic coordinate sampling, not observation mini-batches.
 
