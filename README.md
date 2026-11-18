@@ -1,8 +1,6 @@
-# The Geometry of Learning
+# From Curvature to Convergence: Feature Scaling and First-Order Optimization in Logistic Regression
 
-**Investigating the Effects of Loss Landscape Conditioning on Optimization Algorithms in Machine Learning**
-
-This repository contains a reproducible experimental study of how objective-function curvature and feature scaling interact with first-order optimizers. The implementation uses logistic regression written with NumPy and compares Batch Gradient Descent, Stochastic Gradient Descent (SGD), Momentum, and Adam.
+This repository contains an experimental study of how feature scaling and local objective curvature interact with first-order optimization in binary logistic regression. The implementation uses NumPy and compares Batch Gradient Descent, Stochastic Gradient Descent (SGD), normalized exponential-moving-average Momentum, and Adam. A separate diagonal-quadratic experiment studies convergence as a prescribed condition number increases.
 
 ## Project structure
 
@@ -32,17 +30,20 @@ geometry-of-learning/
 
 ## Environment setup
 
-Use Python 3.10 or newer. From the repository root:
+The notebooks record Python 3.14.8 in their kernel metadata. The repository's `requirements.txt` specifies minimum dependency versions rather than a fully locked environment; exact package versions used to generate the archived experimental outputs are not recorded. For a fresh environment, use Python 3.10 or newer and install the declared dependencies:
 
 ```bash
 python -m venv .venv
+# Activate the environment, then:
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-Activate the environment, then install the dependencies:
+To record the environment used for a future reproduction, save:
 
 ```bash
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+python --version
+python -m pip freeze > environment-freeze.txt
 ```
 
 Run the core implementation tests:
@@ -64,23 +65,23 @@ Run the notebooks in numerical order, preferably from a fresh kernel for each no
 | Notebook | Role |
 |---|---|
 | `01_Mathematical_Foundations.ipynb` | Defines the logistic-regression objective, gradient, and Hessian; verifies the analytical derivatives numerically. |
-| `02_Optimizer_Comparison.ipynb` | Demonstrates the four optimizers on a reproducible synthetic binary-classification problem. This is illustrative, not the final statistical benchmark. |
-| `03_Real_Dataset_Experiments.ipynb` | Profiles the three datasets and compares local Hessian conditioning before and after standardization. |
-| `04_Final_Experiments.ipynb` | Conducts repeated experiments on three real datasets, cross-dataset replication analysis, and controlled quadratic conditioning experiments. Includes ablation studies, statistical tests, and generated figures. |
+| `02_Optimizer_Comparison.ipynb` | Demonstrates the four optimizers on a reproducible synthetic binary-classification problem. This is illustrative, not the final repeated benchmark. |
+| `03_Real_Dataset_Experiments.ipynb` | Profiles the three datasets and performs an initial local Hessian-conditioning comparison using its own stratified 80/20 split (seed 42). Its condition numbers are a separate preliminary diagnostic and are not expected to equal the final-protocol values in Notebook 04. |
+| `04_Final_Experiments.ipynb` | Runs the final repeated experiments on three real datasets, exploratory statistical comparisons, descriptive cross-dataset replication summaries, and controlled quadratic conditioning experiments. |
 
 ## Datasets
 
 The study uses:
 
-- **Breast Cancer Wisconsin Diagnostic** (available through scikit-learn's dataset loader)
+- **Breast Cancer Wisconsin Diagnostic** (loaded through scikit-learn)
 - **Banknote Authentication** (OpenML, version 1)
 - **Ionosphere** (OpenML, version 1)
 
 The two OpenML datasets require an internet connection for their first download. Scikit-learn caches successfully downloaded OpenML datasets locally, so a later run can usually use the cache. The project does not place external dataset copies in the repository.
 
-## Experimental Design Summary
+## Experimental design summary
 
-### Real-Dataset Experiments
+### Final real-dataset experiments
 
 The final repeated study evaluates three datasets, two feature conditions (`original` and `standardized`), four optimizers, and ten development-split seeds, resulting in **240 final evaluation fits**.
 
@@ -88,55 +89,63 @@ Each dataset receives one fixed, stratified 20% test holdout (seed 2026) before 
 
 Hyperparameter tuning and early stopping use development-pool data only. The fixed test holdout is evaluated after restoring the best validation parameters. Each final seed changes the train/validation split but reuses the same test observations for that dataset. Constant-feature removal and standardization are fitted using the training partition only.
 
-### Cross-Dataset Replication Validation
+### Local Hessian conditioning
 
-The same experimental protocol is applied independently to Breast Cancer Wisconsin Diagnostic, Banknote Authentication, and Ionosphere.
+The final-paper condition numbers are calculated at the zero parameter vector on the **tuning training partition from the development pool**. They are therefore the values produced by Notebook 04's final experimental protocol. Notebook 03 uses a different, preliminary stratified 80/20 split with seed 42; its condition numbers (approximately 2.18×10¹² and 1.04×10⁵ for Breast Cancer, 132.0 and 12.7 for Banknote, and 396.4 and 153.4 for Ionosphere, for original and standardized features respectively) are not directly interchangeable with Notebook 04's final-protocol values. Both are local diagnostics at zero initialization, not global properties of the loss surface.
 
-Cross-dataset validation is treated as replication of optimizer and feature-scaling patterns across datasets with different feature spaces, not as train-on-one-dataset/test-on-another transfer. The analysis compares standardization effects, optimizer rankings, and local Hessian condition numbers across the three datasets.
+### Cross-dataset replication analysis
 
-Consistency counts and rank summaries are descriptive. Three datasets do not support claims of universal generalization.
+The same final experimental protocol is applied independently to Breast Cancer Wisconsin Diagnostic, Banknote Authentication, and Ionosphere. This is replication of optimizer and feature-scaling patterns across distinct datasets, not train-on-one-dataset/test-on-another transfer.
 
-### Controlled Quadratic Experiment
+Optimizer ranks are computed within each dataset/feature-condition combination and summarized across these groups. Rank summaries, optimizer orderings, and consistency counts are **descriptive only**; they do not establish a universally best optimizer or support universal generalization from three datasets.
+
+### Exploratory statistical comparisons
+
+Notebook 04 computes Friedman omnibus tests for each dataset × feature-condition × metric group (12 tests total), followed by six paired Wilcoxon signed-rank comparisons within each group (72 pairwise tests total). Holm adjustments are reported both within each six-comparison group and globally across all 72 pairwise comparisons; Friedman p-values are also adjusted globally across the 12 omnibus tests.
+
+These analyses are **exploratory and conditional on the fixed holdout**, not confirmatory population-level inference. The ten seeds share the same test observations and use overlapping development partitions, so they are not ten independent test cohorts. In addition, the Friedman chi-square approximation is tentative with only ten blocks and four related optimizer samples. Interpret descriptive effects and their consistency as primary; do not use thresholded p-values to claim a generally superior optimizer.
+
+### Controlled quadratic experiment
 
 The objective is
 
 $$
-f(\theta) = \frac{1}{2}\theta^{T}
-\begin{bmatrix}
-1 & 0 \\
-0 & \kappa
-\end{bmatrix}\theta,
-\quad
-\kappa \in \{1, 10, 100, 1000, 10000\}.
+f(\\theta) = \\frac{1}{2}\\theta^{T}
+\\begin{bmatrix}
+1 & 0 \\\
+0 & \\kappa
+\\end{bmatrix}\\theta,
+\\quad
+\\kappa \\in \\{1, 10, 100, 1000, 10000\\}.
 $$
 
-Learning rates are tuned independently for each optimizer and condition number. Evaluation uses ten seeds per optimizer/condition-number pair, producing **200 runs**.
-
-Convergence requires the loss to remain at or below `1e-8` for ten consecutive updates, with a maximum of 5,000 updates. A stable run that does not meet the threshold is reported as non-converged, not unstable.
+Learning rates are tuned independently for each optimizer and condition number. Evaluation uses ten seeds per optimizer/condition-number pair, producing **200 runs**. Convergence requires the loss to remain at or below `1e-8` for ten consecutive updates, with a maximum of 5,000 updates. A stable run that does not meet the threshold is reported as non-converged, not unstable.
 
 The Momentum implementation uses an exponential moving average of gradients:
 
 $$
-v_t = \beta v_{t-1} + (1-\beta)g_t,
-\qquad
-\theta_{t+1} = \theta_t - \eta v_t.
+v_t = \\beta v_{t-1} + (1-\\beta)g_t,
+\\qquad
+\\theta_{t+1} = \\theta_t - \\eta v_t.
 $$
 
-This is not the unnormalized heavy-ball convention. The quadratic SGD experiment uses unbiased stochastic coordinate sampling, not observation mini-batches.
+This is not the unnormalized heavy-ball convention. The quadratic SGD experiment uses unbiased stochastic coordinate sampling, not observation mini-batches. Equal update counts do not imply equal arithmetic cost, and the diagonal Hessian is aligned with the coordinate axes.
 
 ## Outputs
 
 - Generated CSV tables are saved under `results/tables/`; generated plots are saved under `results/figures/`.
-- The outputs include the repeated optimizer experiments, hyperparameter selections, Hessian conditioning diagnostics, statistical comparisons, and cross-dataset replication summaries.
-- The cross-dataset analysis includes comparisons of standardization effects, optimizer rankings, and Hessian conditioning across the three datasets.
-- The notebooks should be executed to regenerate the results using the current experimental code. Existing output files may be overwritten when the corresponding cells are executed.
+- Outputs include repeated optimizer experiments, selected hyperparameters, Hessian-conditioning diagnostics, exploratory statistical comparisons, and descriptive cross-dataset replication summaries.
+- The cross-dataset analysis includes descriptive standardization effects, optimizer ranks, and Hessian conditioning across the three datasets.
+- Run the notebooks to regenerate outputs using the current experimental code. Existing output files may be overwritten by the corresponding cells.
 
 ## Interpretation cautions
 
-- Hessian condition numbers in Notebook 03 are local diagnostics evaluated at the zero parameter vector.
-- Notebook 02 is an illustrative optimizer demonstration and is not a controlled equal-compute comparison.
-- Learning rates are tuned within finite candidate grids. A selected boundary rate means the best observed candidate may lie outside the tested range.
-- The ten evaluation seeds reuse the same fixed test holdout within each dataset. They represent repeated training and development-split variation, not independent test cohorts. Statistical comparisons across seeds should therefore be interpreted conditionally on the fixed holdout and should not be treated as population-level inference from ten independent test samples.
+- Hessian condition numbers are local diagnostics evaluated at the zero parameter vector; the final-paper values use Notebook 04's tuning training partition, not Notebook 03's separate preliminary split.
+- Notebook 02 is illustrative and is not a controlled equal-compute comparison.
+- Learning rates are selected from finite candidate grids. A boundary selection means the best observed candidate may lie outside the tested range.
+- In **94 of the 240 saved final fits**, the best validation checkpoint occurred at the 300-epoch cap. This count is from the archived `final_results` produced in Notebook 04; it indicates that the training budget may have constrained some fits.
+- The ten evaluation seeds reuse one fixed test holdout per dataset and have overlapping development partitions. Standard deviations describe fitted-model variation conditional on the holdout, not variation across independent test cohorts.
+- Friedman and Wilcoxon/Holm outputs are exploratory diagnostics under this dependent repeated-split design; corrected p-values should not be interpreted as confirmatory evidence.
+- Optimizer ranks and rank summaries are descriptive, not inferential rankings or claims of a universal best method.
 - Equal optimizer-update budgets in the quadratic experiment do not imply equal arithmetic cost.
-- Ten evaluation seeds provide repeated evidence but still yield limited statistical power. Discuss descriptive effect sizes alongside corrected p-values.
-- The real-dataset study evaluates the optimizer patterns independently across datasets; it is not a cross-dataset train-on-one/test-on-another transfer experiment.
+- The real-dataset study is not cross-dataset transfer learning or train-on-one/test-on-another evaluation.
