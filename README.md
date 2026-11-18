@@ -2,6 +2,17 @@
 
 This repository contains an experimental study of how feature scaling and local objective curvature interact with first-order optimization in binary logistic regression. The implementation uses NumPy and compares Batch Gradient Descent, Stochastic Gradient Descent (SGD), normalized exponential-moving-average Momentum, and Adam. A separate diagonal-quadratic experiment studies convergence as a prescribed condition number increases.
 
+## Research paper
+
+[Read the Research Paper (PDF)](paper/Research%20Paper.pdf)
+
+## Mathematics Behind AI project evaluation
+
+- **Ablation study:** Notebook 03, Section 4, compares original and standardized features using local Hessian condition numbers. The generated results are available in [scaling_conditioning_ablation.csv](results/tables/scaling_conditioning_ablation.csv) and [hessian_conditioning_by_scaling.png](results/figures/hessian_conditioning_by_scaling.png).
+- **Statistical analysis:** Notebook 04 reports exploratory Friedman omnibus tests and paired Wilcoxon signed-rank comparisons with Holm corrections. The results are available in [friedman_tests.csv](results/tables/friedman_tests.csv) and [pairwise_wilcoxon_tests.csv](results/tables/pairwise_wilcoxon_tests.csv). These comparisons are conditional on the shared fixed test holdouts and should not be interpreted as confirmatory population-level inference.
+- **Cross-dataset validation:** Notebook 04 applies the repeated experimental protocol independently to Breast Cancer Wisconsin Diagnostic, Banknote Authentication, and Ionosphere. The comparative results are available in [cross_dataset_validation_summary.csv](results/tables/cross_dataset_validation_summary.csv), [cross_dataset_scaling_effects.csv](results/tables/cross_dataset_scaling_effects.csv), and [cross_dataset_optimizer_rank_summary.csv](results/tables/cross_dataset_optimizer_rank_summary.csv).
+
+
 ## Project structure
 
 ```text
