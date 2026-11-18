@@ -18,23 +18,35 @@ This repository contains an experimental study of how feature scaling and local 
 ```text
 geometry-of-learning/
 ├── README.md
+├── VALIDATION_REPORT.md
 ├── requirements.txt
 ├── .gitignore
-├── src/
-│   ├── __init__.py
-│   ├── datasets.py
-│   ├── logistic_regression.py
-│   └── optimizers.py
+├── data/
+│   └── README.md
 ├── notebooks/
 │   ├── 01_Mathematical_Foundations.ipynb
 │   ├── 02_Optimizer_Comparison.ipynb
 │   ├── 03_Real_Dataset_Experiments.ipynb
 │   └── 04_Final_Experiments.ipynb
-├── data/
+├── paper/
+│   └── Research Paper.pdf
 ├── results/
 │   ├── figures/
+│   │   ├── cross_dataset_optimizer_ranks.png
+│   │   ├── cross_dataset_scaling_effects.png
+│   │   ├── hessian_conditioning_by_scaling.png
+│   │   ├── optimizer_comparison.png
+│   │   ├── optimizer_comparison_synthetic.png
+│   │   ├── quadratic_convergence_kappa_*.png
+│   │   ├── real_data_test_accuracy.png
+│   │   └── real_data_test_log_loss.png
 │   └── tables/
-├── paper/
+│       └── *.csv
+├── src/
+│   ├── __init__.py
+│   ├── datasets.py
+│   ├── logistic_regression.py
+│   └── optimizers.py
 └── tests/
     └── test_core.py
 ```
