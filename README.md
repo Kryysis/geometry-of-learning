@@ -4,7 +4,7 @@ This repository contains an experimental study of how feature scaling and local 
 
 ## Research paper
 
-[Read the Research Paper (PDF)](paper/Research%20Paper.pdf)
+[Read the Research Paper (PDF)](https://www.overleaf.com/project/6afdc441dc9c2a6f45eb1d3b/share#1a8207887067a4e4799fc818b7e24f7c832fe263eaf95927)
 
 ## Evaluation metrics
 
