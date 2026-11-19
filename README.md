@@ -28,8 +28,8 @@ geometry-of-learning/
 │   ├── 02_Optimizer_Comparison.ipynb
 │   ├── 03_Real_Dataset_Experiments.ipynb
 │   └── 04_Final_Experiments.ipynb
-├── paper/
-│   └── Research Paper.pdf
+├── research-paper/
+│   └── Research paper
 ├── results/
 │   ├── figures/
 │   │   ├── cross_dataset_optimizer_ranks.png
